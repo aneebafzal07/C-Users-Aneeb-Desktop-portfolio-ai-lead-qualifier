@@ -138,7 +138,7 @@ export default function HowItWorksModal({
     <AnimatePresence>
       {open ? (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto overscroll-contain p-0 touch-pan-y sm:items-center sm:p-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -155,7 +155,7 @@ export default function HowItWorksModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby="how-it-works-title"
-            className="relative z-10 flex max-h-[92vh] w-full max-w-6xl overflow-hidden rounded-[32px] border border-white/15 bg-[linear-gradient(180deg,rgba(33,12,56,0.86),rgba(14,5,27,0.94))] shadow-[0_40px_140px_rgba(8,1,18,0.72)]"
+            className="relative z-10 flex h-[100dvh] max-h-[100dvh] w-full max-w-none overflow-y-auto rounded-none border border-white/15 bg-[linear-gradient(180deg,rgba(33,12,56,0.92),rgba(14,5,27,0.98))] shadow-[0_40px_140px_rgba(8,1,18,0.72)] sm:h-auto sm:max-h-[92vh] sm:max-w-6xl sm:overflow-hidden sm:rounded-[32px]"
             initial={{ opacity: 0, y: 24, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
@@ -166,8 +166,8 @@ export default function HowItWorksModal({
             <div className="pointer-events-none absolute -left-10 top-16 h-40 w-40 rounded-full bg-fuchsia-500/20 blur-3xl" />
             <div className="pointer-events-none absolute bottom-0 right-10 h-48 w-48 rounded-full bg-violet-500/20 blur-3xl" />
 
-            <div className="flex min-h-0 w-full flex-col lg:flex-row">
-              <aside className="border-b border-white/10 bg-white/[0.03] p-5 lg:min-h-0 lg:w-[290px] lg:border-b-0 lg:border-r lg:p-6">
+            <div className="flex min-h-0 w-full flex-1 flex-col lg:flex-row">
+              <aside className="border-b border-white/10 bg-white/[0.03] p-4 sm:p-5 lg:min-h-0 lg:w-[290px] lg:border-b-0 lg:border-r lg:p-6">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.3em] text-fuchsia-100/55">
@@ -188,7 +188,7 @@ export default function HowItWorksModal({
                   <button
                     type="button"
                     onClick={closeModal}
-                    className="group relative inline-flex h-6 w-11 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/10 backdrop-blur-xl transition-all duration-300 hover:scale-110 hover:border-fuchsia-400/40 hover:bg-fuchsia-500/15 hover:shadow-[0_0_25px_rgba(217,70,239,0.45)] active:scale-95"
+                    className="group relative inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/10 backdrop-blur-xl transition-all duration-300 hover:scale-110 hover:border-fuchsia-400/40 hover:bg-fuchsia-500/15 hover:shadow-[0_0_25px_rgba(217,70,239,0.45)] active:scale-95 sm:h-6 sm:w-11"
                     aria-label="Close how this works modal"
                   >
                     {/* Glow Effect */}
@@ -211,7 +211,7 @@ export default function HowItWorksModal({
                   </button>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-5 sm:mt-6">
                   <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
                     <motion.div
                       className="h-full rounded-full bg-[linear-gradient(90deg,#d946ef,#8b5cf6,#f472b6)]"
@@ -224,7 +224,7 @@ export default function HowItWorksModal({
                   </p>
                 </div>
 
-                <nav className="mt-6 space-y-3" aria-label="Walkthrough steps">
+                <nav className="mt-5 space-y-3 sm:mt-6" aria-label="Walkthrough steps">
                   {steps.map((item, index) => {
                     const isActive = index === activeStep;
 
@@ -266,8 +266,8 @@ export default function HowItWorksModal({
               </aside>
 
               <div className="flex min-h-0 flex-1 flex-col">
-                <div className="flex items-center justify-between gap-4 border-b border-white/10 px-5 py-4 sm:px-6">
-                  <div className="flex gap-2">
+                <div className="flex flex-col gap-4 border-b border-white/10 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                  <div className="flex flex-wrap gap-2">
                     {steps.map((item, index) => (
                       <button
                         key={item.id}
@@ -286,7 +286,7 @@ export default function HowItWorksModal({
                   <button
                     type="button"
                     onClick={() => setShowExample((current) => !current)}
-                    className="rounded-full border border-fuchsia-200/20 bg-white/8 px-4 py-2 text-xs font-medium text-fuchsia-50 transition hover:bg-white/14"
+                    className="w-full rounded-full border border-fuchsia-200/20 bg-white/8 px-4 py-2 text-xs font-medium text-fuchsia-50 transition hover:bg-white/14 sm:w-auto"
                   >
                     {showExample
                       ? "Hide example qualification"
@@ -294,7 +294,7 @@ export default function HowItWorksModal({
                   </button>
                 </div>
 
-                <div className="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-6 sm:py-6">
+                <div className="min-h-0 flex-1 px-4 py-4 pb-6 sm:px-6 sm:py-6 sm:pb-6">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={step.id}
@@ -304,11 +304,11 @@ export default function HowItWorksModal({
                       transition={{ duration: 0.24, ease: "easeOut" }}
                       className="space-y-5"
                     >
-                      <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                      <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:p-5">
                         <p className="text-[11px] uppercase tracking-[0.3em] text-fuchsia-100/55">
                           {step.eyebrow}
                         </p>
-                        <h3 className="mt-3 text-3xl font-semibold text-white">
+                        <h3 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
                           {step.title}
                         </h3>
                         <p className="mt-3 max-w-3xl text-sm leading-7 text-fuchsia-50/84">
@@ -316,8 +316,8 @@ export default function HowItWorksModal({
                         </p>
                       </div>
 
-                      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.3fr)_minmax(280px,0.9fr)]">
-                        <section className="rounded-[28px] border border-white/10 bg-white/[0.04] p-5">
+                      <div className="grid gap-4 xl:grid-cols-[minmax(0,1.3fr)_minmax(280px,0.9fr)]">
+                        <section className="rounded-[28px] border border-white/10 bg-white/[0.04] p-4 sm:p-5">
                           <p className="text-[11px] uppercase tracking-[0.24em] text-fuchsia-100/45">
                             What happens here
                           </p>
@@ -333,7 +333,7 @@ export default function HowItWorksModal({
                           </div>
                         </section>
 
-                        <section className="rounded-[28px] border border-fuchsia-200/10 bg-[linear-gradient(180deg,rgba(95,26,146,0.26),rgba(255,255,255,0.04))] p-5">
+                        <section className="rounded-[28px] border border-fuchsia-200/10 bg-[linear-gradient(180deg,rgba(95,26,146,0.26),rgba(255,255,255,0.04))] p-4 sm:p-5">
                           <p className="text-[11px] uppercase tracking-[0.24em] text-fuchsia-100/45">
                             {step.calloutTitle}
                           </p>
@@ -373,7 +373,7 @@ export default function HowItWorksModal({
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 12 }}
                             transition={{ duration: 0.22, ease: "easeOut" }}
-                            className="rounded-[28px] border border-cyan-200/12 bg-[linear-gradient(135deg,rgba(34,211,238,0.08),rgba(168,85,247,0.1),rgba(255,255,255,0.04))] p-5"
+                            className="rounded-[28px] border border-cyan-200/12 bg-[linear-gradient(135deg,rgba(34,211,238,0.08),rgba(168,85,247,0.1),rgba(255,255,255,0.04))] p-4 sm:p-5"
                           >
                             <div className="flex flex-wrap items-center justify-between gap-3">
                               <div>
@@ -411,37 +411,11 @@ export default function HowItWorksModal({
                   </AnimatePresence>
                 </div>
 
-                <div className="border-t border-white/10 px-5 py-4 sm:px-6">
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-sm text-fuchsia-100/68">
-                      Keyboard support: use left and right arrow keys to move
-                      between steps, or press Esc to close.
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setActiveStep((current) => Math.max(current - 1, 0))
-                        }
-                        disabled={activeStep === 0}
-                        className="rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm text-fuchsia-50 transition hover:bg-white/12 disabled:cursor-not-allowed disabled:opacity-45"
-                      >
-                        Previous
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setActiveStep((current) =>
-                            Math.min(current + 1, steps.length - 1),
-                          )
-                        }
-                        disabled={activeStep === steps.length - 1}
-                        className="rounded-full bg-[linear-gradient(135deg,#d946ef,#8b5cf6)] px-5 py-2 text-sm font-medium text-white shadow-[0_12px_30px_rgba(168,85,247,0.32)] transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-45"
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </div>
+                <div className="sticky bottom-0 z-10 shrink-0 border-t border-white/10 bg-[rgba(14,5,27,0.98)] px-4 py-4 shadow-[0_-12px_30px_rgba(0,0,0,0.22)] sm:px-6">
+                  <p className="text-xs leading-5 text-fuchsia-100/68 sm:text-sm">
+                    Keyboard support: use left and right arrow keys to move
+                    between steps, or press Esc to close.
+                  </p>
                 </div>
               </div>
             </div>

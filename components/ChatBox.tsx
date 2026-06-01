@@ -183,15 +183,18 @@ export default function ChatBox() {
                 <button
                   type="button"
                   onClick={() => setShowHowItWorks(true)}
-                  className="group w-full rounded-2xl border border-fuchsia-200/16 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(217,70,239,0.08),rgba(168,85,247,0.1))] px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition hover:border-fuchsia-200/28 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(217,70,239,0.14),rgba(168,85,247,0.16))]"
+                  className="group w-full rounded-2xl border border-fuchsia-200/16 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(217,70,239,0.08),rgba(168,85,247,0.1))] px-3 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] transition hover:border-fuchsia-200/28 hover:bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(217,70,239,0.14),rgba(168,85,247,0.16))] sm:px-4"
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <p className="mt-2 text-sm font-medium text-fuchsia-50">
-                         How I work?
+                  <div className="flex items-center justify-between gap-2 sm:gap-3">
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-fuchsia-50 sm:text-base">
+                        How I work
+                      </p>
+                      <p className="mt-1 text-[11px] leading-4 text-fuchsia-100/60 sm:text-xs">
+                        Tap to see the walkthrough
                       </p>
                     </div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-fuchsia-200/16 bg-white/8 text-fuchsia-50 transition group-hover:translate-x-0.5 group-hover:shadow-[0_0_24px_rgba(217,70,239,0.24)]">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-fuchsia-200/16 bg-white/8 text-fuchsia-50 transition group-hover:translate-x-0.5 group-hover:shadow-[0_0_24px_rgba(217,70,239,0.24)] sm:h-10 sm:w-10">
                       ?
                     </div>
                   </div>

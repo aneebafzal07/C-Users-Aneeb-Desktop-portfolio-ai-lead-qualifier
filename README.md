@@ -10,30 +10,30 @@ AI Lead Qualifier Agent built with Next.js, TypeScript, Tailwind CSS, OpenAI-com
 
 ## Environment
 
-Create `/.env.local`:
+Use `/.env.local` for real values.
 
 ```bash
-OPENAI_API_KEY=your_openai_api_key
+OPENAI_API_KEY=
 OPENAI_CHAT_MODEL=gpt-4.1-mini
 OPENAI_EVAL_MODEL=gpt-4.1-mini
 
 # Optional OpenRouter fallback
-OPENROUTER_API_KEY=your_openrouter_api_key
-APP_URL=http://localhost:3000
+OPENROUTER_API_KEY=
+APP_URL=
 
-SUPABASE_URL=https://your-project-id.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_publishable_key
+SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
 
 # Optional notifications
-RESEND_API_KEY=your_resend_api_key
-SALES_TEAM_EMAIL=sales@example.com
-SALES_FROM_EMAIL=agent@example.com
-TWILIO_ACCOUNT_SID=your_twilio_account_sid
-TWILIO_AUTH_TOKEN=your_twilio_auth_token
-TWILIO_WHATSAPP_FROM=whatsapp:+14155238886
-SALES_WHATSAPP_TO=whatsapp:+15555555555
+RESEND_API_KEY=
+SALES_TEAM_EMAIL=
+SALES_FROM_EMAIL=
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_WHATSAPP_FROM=
+SALES_WHATSAPP_TO=
 ```
 
 ## Supabase Setup
