@@ -155,7 +155,7 @@ export default function HowItWorksModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby="how-it-works-title"
-            className="relative z-10 flex h-[100dvh] max-h-[100dvh] w-full max-w-none overflow-y-auto rounded-none border border-white/15 bg-[linear-gradient(180deg,rgba(33,12,56,0.92),rgba(14,5,27,0.98))] shadow-[0_40px_140px_rgba(8,1,18,0.72)] sm:h-auto sm:max-h-[92vh] sm:max-w-6xl sm:overflow-hidden sm:rounded-[32px]"
+            className="relative z-10 flex h-[100dvh] max-h-[100dvh] w-full max-w-none overflow-y-auto overscroll-contain rounded-none border border-white/15 bg-[linear-gradient(180deg,rgba(33,12,56,0.92),rgba(14,5,27,0.98))] shadow-[0_40px_140px_rgba(8,1,18,0.72)] [-webkit-overflow-scrolling:touch] touch-pan-y sm:h-auto sm:max-h-[92vh] sm:max-w-6xl sm:overflow-hidden sm:rounded-[32px]"
             initial={{ opacity: 0, y: 24, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
@@ -294,7 +294,7 @@ export default function HowItWorksModal({
                   </button>
                 </div>
 
-                <div className="min-h-0 flex-1 px-4 py-4 pb-6 sm:px-6 sm:py-6 sm:pb-6">
+                <div className="min-h-0 flex-1 px-4 py-4 pb-8 sm:px-6 sm:py-6 sm:pb-6">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={step.id}
@@ -411,8 +411,6 @@ export default function HowItWorksModal({
                   </AnimatePresence>
                 </div>
 
-                <div className="sticky bottom-0 z-10 shrink-0 border-t border-white/10 bg-[rgba(14,5,27,0.98)] px-4 py-4 shadow-[0_-12px_30px_rgba(0,0,0,0.22)] sm:px-6">
-                </div>
               </div>
             </div>
           </motion.div>
