@@ -412,10 +412,6 @@ export default function HowItWorksModal({
                 </div>
 
                 <div className="sticky bottom-0 z-10 shrink-0 border-t border-white/10 bg-[rgba(14,5,27,0.98)] px-4 py-4 shadow-[0_-12px_30px_rgba(0,0,0,0.22)] sm:px-6">
-                  <p className="text-xs leading-5 text-fuchsia-100/68 sm:text-sm">
-                    Keyboard support: use left and right arrow keys to move
-                    between steps, or press Esc to close.
-                  </p>
                 </div>
               </div>
             </div>
